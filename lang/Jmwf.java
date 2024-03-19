@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.io.File;
 
 public class Jmwf {
 
@@ -22,7 +23,9 @@ public class Jmwf {
         ArrayList<String> operatorTokens = new ArrayList<>();
         ArrayList<String> variableTokens = new ArrayList<>();
 
-        String expression = "C:\\Users\\John Marc\\Documents\\lang_jmwf\\lang\\test.jmwf";
+        String expression = "test.jmwf";
+        String filePath = System.getProperty("user.dir") + File.separator + "lang" + File.separator + expression;
+        expression = filePath;
         System.out.println("Expression: " + expression);
 
         try (BufferedReader reader = new BufferedReader(new FileReader(expression))) {
